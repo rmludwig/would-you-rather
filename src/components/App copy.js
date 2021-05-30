@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux';
-//import LoadingBar from 'react-redux-loading'
+import LoadingBar from 'react-redux-loading'
 import logo from '../logo.svg';
 import '../App.css';
 import { fetchAllAppData } from '../actions/shared';
@@ -24,23 +24,23 @@ class App extends Component {
                     <header className="App-header">
                         This is header
                     </header>
+                    <LoadingBar />
 
                     <div className='container'>
                         {/* TODO add nave here? */}
                         {//this.props.loading === true
                         1 === 2
-                            ? null
-                            : <div>
-                                    <img src={logo} className="App-logo" alt="logo" />
-                                    <p>
-                                    Starter Code
-                                    </p>
-                                    <UserSelection />
-                                    <Route path='/' exact component={QuestionsList} />
-                                    <Route path='questions/:question_id' component={Question} />
-                                    <Route path='/add' component={AddQuestion} />
-                                    <Route path='/leaderboard' component={Leaderboard} />
-                                    <Route path='/*' component={Leaderboard} />
+                        ? null
+                        : <div>
+                                <img src={logo} className="App-logo" alt="logo" />
+                                <p>
+                                Starter Code
+                                </p>
+                                <UserSelection />
+                                <Route path='/' exact component={QuestionsList} />
+                                <Route path='questions/:question_id' component={Question} />
+                                <Route path='/add' component={AddQuestion} />
+                                <Route path='/leaderboard' component={Leaderboard} />
                             </div>
                         }
                     </div>
