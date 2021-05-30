@@ -22,24 +22,23 @@ class App extends Component {
             <Router>
                 <Fragment>
                     <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo" />
                         This is header
                     </header>
 
                     <div className='container'>
-                        {/* TODO add nave here? */}
-                        {//this.props.loading === true
-                        1 === 2
-                            ? null
+                        {/* TODO add nav here? */}
+                        {this.props.showUserSelect === true
+                            ? <div>
+                                <UserSelection />
+                            </div>
                             : <div>
-                                    <img src={logo} className="App-logo" alt="logo" />
-                                    <p>
-                                    Starter Code
-                                    </p>
-                                    <UserSelection />
-                                    <Route path='/' exact component={QuestionsList} />
-                                    <Route path='questions/:question_id' component={Question} />
-                                    <Route path='/add' component={AddQuestion} />
-                                    <Route path='/leaderboard' component={Leaderboard} />
+                                <img src={logo} className="App-logo" alt="logo" />
+
+                                <Route path='/' exact component={QuestionsList} />
+                                <Route path='questions/:question_id' component={Question} />
+                                <Route path='/add' component={AddQuestion} />
+                                <Route path='/leaderboard' component={Leaderboard} />
                             </div>
                         }
                     </div>
@@ -49,4 +48,11 @@ class App extends Component {
     }
 }
 
-export default connect()(App);
+function mapStateToProps ({ userAuth }) {
+    console.log("who is user?",userAuth)
+    return {
+        showUserSelect: userAuth === null
+    }
+}
+
+export default connect(mapStateToProps)(App);
