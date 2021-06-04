@@ -17,9 +17,9 @@ class User extends Component {
         const { user } = this.props;
         if (user === null) {
             return (
-                <div>
+                <span>
                     Unknown User
-                </div>
+                </span>
             )
         }
         else {
@@ -29,7 +29,7 @@ class User extends Component {
                     <Card.Body className="pt-0">
                         <Card.Title className="text-center">{user.name}</Card.Title>
                         <hr className="mt-0" />
-                        <Card.Text>
+                        <Card.Text as="div">
                             <Row className="mt-3">
                                 <Col xs={4} sm={4} md={4} lg={6}>User ID :</Col>
                                 <Col xs={8} sm={8} md={8} lg={6}>{user.id}</Col>
