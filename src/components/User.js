@@ -4,8 +4,15 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { setCurrentUser } from '../actions/userAuth';
 
 class User extends Component {
+    selectUser = (e) => {
+        e.preventDefault()
+        const { dispatch, id } = this.props
+        dispatch(setCurrentUser({ id }))
+    }
+
     render() {
         const { user } = this.props;
         if (user === null) {
@@ -32,7 +39,7 @@ class User extends Component {
                                 <Col xs={8} sm={8} md={8} lg={6}>{(user.questions.length + Object.keys(user.answers).length)}</Col>
                             </Row>
                         </Card.Text>
-                        <Button variant="primary" className="rounded mx-auto d-block">Select User</Button>
+                        <Button variant="primary" className="rounded mx-auto d-block" onClick={this.selectUser}>Select User</Button>
                     </Card.Body>
                 </Card>
             )
