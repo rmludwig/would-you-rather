@@ -48,7 +48,7 @@ class User extends Component {
 }
 
 function mapStateToProps ({ users }, {id}) {
-    const user = users[id]
+    const user = users[id];
     return {
         user: user ? user : null
     }
