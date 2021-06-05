@@ -8,12 +8,12 @@ class UserSelection extends Component {
     render() {
         return (
             <Fragment>
-                <Row className="row-pad-top">
+                <Row className="row-pad-top row-pad-side">
                     <Col className="d-flex justify-content-center">
                         <p>Select a user to get started. Who do you want to be?</p>
                     </Col>
                 </Row>
-                <Row className="row-pad-top">
+                <Row className="row-pad-top row-pad-side">
                     {this.props.allUserIds.map((id) => (
                         <Col lg={4} md={6} sm={12}  className="justify-content-center mt-4" key={id}>
                             <User id={id} />

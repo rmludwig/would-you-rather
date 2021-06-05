@@ -24,7 +24,7 @@ class User extends Component {
         }
         else {
             return (
-                <Card border="secondary" >
+                <Card border="secondary" style={{ "minWidth": "18rem"}}>
                     <Card.Img variant="top" src={user.avatarURL} alt="User avatar" className="rounded mx-auto d-block avatar-img"/>
                     <Card.Body className="pt-0">
                         <Card.Title className="text-center">{user.name}</Card.Title>

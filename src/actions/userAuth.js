@@ -8,7 +8,7 @@ export function setCurrentUser (id) {
     }
 }
 
-export function logoutUser () {
+export function logoutCurrentUser () {
     return {
         type: LOGOUT_USER,
         id: null

@@ -10,8 +10,8 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-    height: 10%;
-    width: 10%;
+    height: 25%;
+    width: 25%;
   }
 }
 
@@ -39,9 +39,22 @@
   }
 }
 
+/* bootstrap adjustments */
+.container-fix {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.font-weight-bold {
+  font-weight: bold;
+}
+
 /* custom */
 .row-pad-top {
   margin-top: 2rem !important;
+}
+.row-pad-side {
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
 }
 .avatar-img {
   margin: 1rem;
@@ -49,4 +62,8 @@
   max-height:100px;
   width: auto;
   height: auto;
+}
+.nav-btn-pad-side {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
 }
