@@ -13,7 +13,6 @@ class QuestionsList extends Component {
                     <Card.Body>
                         <Tabs defaultActiveKey="unanswered" id="uncontrolled-tab-example">
                             <Tab eventKey="unanswered" title="Unanswered">
-                                { console.log("inside the comp", this.props.answeredIdsSorted) }
                                 {this.props.unansweredIdsSorted.map((id) => (
                                     <Question key={id} id={id} />
                                 ))}

@@ -35,6 +35,19 @@ let users = {
 }
 
 let questions = {
+  "1111111111111111111": {
+    id: '1111111111111111111',
+    author: 'sarahedo',
+    timestamp: 1999999999999,
+    optionOne: {
+      votes: [],
+      text: 'test question fake one',
+    },
+    optionTwo: {
+      votes: [],
+      text: 'test question fake two'
+    }
+  },
   "8xf0y6ziyjabvozdd253nd": {
     id: '8xf0y6ziyjabvozdd253nd',
     author: 'sarahedo',

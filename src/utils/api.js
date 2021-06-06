@@ -21,5 +21,6 @@ export function saveQuestion (data) {
 }
 
 export function saveQuestionAnswer (data) {
+    console.log("saveQuestionAnswer data = ", data)
     return _saveQuestionAnswer(data)
 }
