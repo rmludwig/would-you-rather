@@ -1,4 +1,5 @@
 import { saveQuestionAnswer } from '../utils/api'
+import { setUserAnswer } from './users';
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const VOTE_ONE = 'VOTE_ONE';
@@ -37,6 +38,7 @@ export function answerOptionOne (info) {
     console.log("\n\nconverted\n",{qid: info.id, authedUser: info.userAuth, answer: info.answer});
     return (dispatch) => {
         dispatch(setOptionOne(info))
+        dispatch(setUserAnswer(info))
 
         return saveQuestionAnswer({qid: info.id, authedUser: info.userAuth.id, answer: info.answer})
         .catch((e) => {
@@ -71,6 +73,7 @@ export function answerOptionTwo (info) {
     console.log("\n\nconverted\n",{qid: info.id, authedUser: info.userAuth, answer: info.answer});
     return (dispatch) => {
         dispatch(setOptionTwo(info))
+        dispatch(setUserAnswer(info))
 
         return saveQuestionAnswer({qid: info.id, authedUser: info.userAuth.id, answer: info.answer})
         .catch((e) => {
