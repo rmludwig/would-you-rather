@@ -67,3 +67,19 @@
   margin-left: 1rem !important;
   margin-right: 1rem !important;
 }
+.custom-left-center-text {
+  text-align: left !important;
+}
+@media (max-width: 767px) {
+  .custom-left-center-text {
+    text-align: center !important;
+  }
+}
+.custom-right-center-text {
+  text-align: right !important;
+}
+@media (max-width: 767px) {
+  .custom-right-center-text {
+    text-align: center !important;
+  }
+}
