@@ -1,8 +1,8 @@
 import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import User from './User';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import User from './User';
 
 class UserSelection extends Component {
     render() {

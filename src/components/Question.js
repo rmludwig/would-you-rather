@@ -38,7 +38,7 @@ class Question extends Component {
             return (
                 <Card border="secondary" style={{ "minWidth": "18rem", margin: "2rem"}}>
                     <Card.Body className="pt-0">
-                        <Card.Header className="text-center mt-2 secondary"><h4>Would You Rather? {this.props.currentQuestion.id} </h4></Card.Header>
+                        <Card.Header className="text-center mt-2 secondary"><h4>Would You Rather?</h4></Card.Header>
                         <Card.Text as="div">
                             <ListGroup>
                                 <ListGroup.Item>
