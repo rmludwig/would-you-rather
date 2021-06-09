@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, VOTE_ONE, VOTE_TWO } from '../actions/questions';
+import { RECEIVE_QUESTIONS, ADD_QUESTION, VOTE_ONE, VOTE_TWO } from '../actions/questions';
 
 export default function questions (state = {}, action) {
     switch(action.type) {
@@ -6,6 +6,11 @@ export default function questions (state = {}, action) {
             return {
                 ...state,
                 ...action.questions
+            }
+        case ADD_QUESTION :
+            return {
+                ...state,
+                [action.question.id]: action.question
             }
         case VOTE_ONE :
             console.log("Deep inside question reducer: action = ", action);
