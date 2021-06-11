@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 

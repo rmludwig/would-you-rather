@@ -35,19 +35,6 @@ let users = {
 }
 
 let questions = {
-  "11": {
-    id: '11',
-    author: 'sarahedo',
-    timestamp: 1999999999999,
-    optionOne: {
-      votes: [],
-      text: 'test question fake one',
-    },
-    optionTwo: {
-      votes: [],
-      text: 'test question fake two'
-    }
-  },
   "8xf0y6ziyjabvozdd253nd": {
     id: '8xf0y6ziyjabvozdd253nd',
     author: 'sarahedo',

@@ -3,28 +3,32 @@ import { connect } from 'react-redux';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import QuestionView from './QuestionView';
-import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/esm/Col';
 
 class QuestionsList extends Component {
     render() {
         return (
             <Fragment>
-                <Card style={{ margin: "3rem"}}>
-                    <Card.Body>
-                        <Tabs defaultActiveKey="unanswered" id="uncontrolled-tab-example">
-                            <Tab eventKey="unanswered" title="Unanswered">
-                                {this.props.unansweredIdsSorted.map((id) => (
-                                    <QuestionView key={id} id={id} preview/>
-                                ))}
-                            </Tab>
-                            <Tab eventKey="answered" title="Answered">
-                                {this.props.answeredIdsSorted.map((id) => (
-                                    <QuestionView key={id} id={id} preview/>
-                                ))}
-                            </Tab>
-                        </Tabs>
-                    </Card.Body>
-                </Card>
+                <Row className="row-pad-top row-pad-side">
+                    <Col className="d-flex justify-content-center">
+                        <h1 className='center'>Questions</h1>
+                    </Col>
+                </Row>
+                <div className="border border-bark rounded mx-md-auto mx-sm-3 mx-xs-3 my-5" style={{ maxWidth: "56rem"}}>
+                    <Tabs defaultActiveKey="unanswered" id="uncontrolled-tab-example">
+                        <Tab eventKey="unanswered" title="Unanswered" tabClassName="font-weight-bold">
+                            {this.props.unansweredIdsSorted.map((id) => (
+                                <QuestionView key={id} id={id} preview/>
+                            ))}
+                        </Tab>
+                        <Tab eventKey="answered" title="Answered" tabClassName="font-weight-bold">
+                            {this.props.answeredIdsSorted.map((id) => (
+                                <QuestionView key={id} id={id} preview/>
+                            ))}
+                        </Tab>
+                    </Tabs>
+                </div>
             </Fragment>
         )
     }
