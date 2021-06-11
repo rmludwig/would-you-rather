@@ -22,17 +22,6 @@ class QuestionVote extends Component {
     }
 
     render() {
-        const { submitted } = this.state
-        console.log("in render", submitted)
-        console.log("state in render",this.state)
-        if (submitted) {
-            console.log("go away")
-            return <Redirect to="/" />
-        }
-        else {
-            console.log("stay")
-        }
-
         return (
             <Col sm={3} className="d-flex justify-content-center my-1">
                 <Button variant="primary" style={{height: "2.25rem"}} className="rounded mx-auto d-block" onClick={this.vote}>
