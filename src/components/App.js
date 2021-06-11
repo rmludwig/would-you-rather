@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
-//import LoadingBar from 'react-redux-loading'
 import '../App.css';
 import { fetchAllAppData } from '../actions/shared';
 import UserSelection from "./UserSelection";
@@ -11,8 +10,6 @@ import QuestionsList from "./QuestionsList";
 import Leaderboard from "./Leaderboard";
 import AddQuestion from "./AddQuestion";
 import Header from "./Header";
-
-
 
 class App extends Component {
     componentDidMount () {
