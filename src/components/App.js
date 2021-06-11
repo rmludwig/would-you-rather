@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import '../App.css';
 import { fetchAllAppData } from '../actions/shared';
 import UserSelection from "./UserSelection";
-import Question from "./Question";
+import QuestionView from "./QuestionView";
 import QuestionsList from "./QuestionsList";
 import Leaderboard from "./Leaderboard";
 import AddQuestion from "./AddQuestion";
@@ -29,7 +29,7 @@ class App extends Component {
                             ? <UserSelection />
                             : <div>
                                 <Route path='/' exact component={QuestionsList} />
-                                <Route path='questions/:question_id' component={Question} />
+                                <Route path='/questions/:question_id' component={QuestionView} />
                                 <Route path='/add' component={AddQuestion} />
                                 <Route path='/leaderboard' component={Leaderboard} />
                             </div>

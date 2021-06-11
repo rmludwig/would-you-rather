@@ -35,8 +35,8 @@ let users = {
 }
 
 let questions = {
-  "1111111111111111111": {
-    id: '1111111111111111111',
+  "11": {
+    id: '11',
     author: 'sarahedo',
     timestamp: 1999999999999,
     optionOne: {

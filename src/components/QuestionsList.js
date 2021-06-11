@@ -2,7 +2,7 @@ import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import Question from './Question';
+import QuestionView from './QuestionView';
 import Card from 'react-bootstrap/Card';
 
 class QuestionsList extends Component {
@@ -14,12 +14,12 @@ class QuestionsList extends Component {
                         <Tabs defaultActiveKey="unanswered" id="uncontrolled-tab-example">
                             <Tab eventKey="unanswered" title="Unanswered">
                                 {this.props.unansweredIdsSorted.map((id) => (
-                                    <Question key={id} id={id} />
+                                    <QuestionView key={id} id={id} preview/>
                                 ))}
                             </Tab>
                             <Tab eventKey="answered" title="Answered">
                                 {this.props.answeredIdsSorted.map((id) => (
-                                    <Question key={id} id={id} />
+                                    <QuestionView key={id} id={id} preview/>
                                 ))}
                             </Tab>
                         </Tabs>
