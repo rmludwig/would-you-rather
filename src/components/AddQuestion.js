@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -48,21 +50,21 @@ class AddQuestion extends Component {
 
         return (
             <div className="mx-4">
+                <Row className="row-pad-top row-pad-side">
+                    <Col className="d-flex justify-content-center">
+                        <h1 className='center'>Add New Question</h1>
+                    </Col>
+                </Row>
                 <Card border="success" style={{ maxWidth: "40rem", minWidth: "18rem"}} className="mx-auto my-4">
                     <Card.Body className="pt-0">
                         <Card.Header className="text-center mt-2 secondary">
-                            <h4>Add New Poll</h4>
+                            <h4>Would someone rather:</h4>
                         </Card.Header>
                         <Card.Text as="div">
                             <Form className="my-2" onSubmit={this.pollSubmit}>
                                 <Form.Group className="mb-3">
                                     <Form.Text className="text-muted mb-3">
-                                        Enter your questions below.
-                                    </Form.Text>
-                                </Form.Group>
-                                <Form.Group className="mb-3">
-                                    <Form.Text className="mb-3">
-                                        <h5 class="text-dark">Would someone rather:</h5>
+                                        Enter your question options below.
                                     </Form.Text>
                                 </Form.Group>
                                 <Form.Group className="mb-3">

@@ -24,7 +24,7 @@ class Question extends Component {
         }
         else {
             return (
-                <Card border="info" className="mx-md-auto my-4 mx-sm-2" style={{ "maxWidth": "50rem", margin: "2rem"}}>
+                <Card border="info" className="mx-md-auto mt-5 mx-sm-2" style={{ "maxWidth": "50rem", margin: "2rem"}}>
                     <Card.Body className="pt-0">
                         <Card.Title className="text-center text-dark mt-2 bg-info mb-0 p-2">{user.name} has asked...</Card.Title>
                         <hr className="mt-0" />

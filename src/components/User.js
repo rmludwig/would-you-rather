@@ -39,7 +39,7 @@ class User extends Component {
                                 <Col xs={8} sm={8} md={8} lg={6}>{(user.questions.length + Object.keys(user.answers).length)}</Col>
                             </Row>
                         </Card.Text>
-                        <Button variant="primary" className="rounded mx-auto d-block" onClick={this.selectUser}>Select User</Button>
+                        <Button variant="primary" className="rounded mx-auto d-block mt-3" onClick={this.selectUser}>Select User</Button>
                     </Card.Body>
                 </Card>
             )

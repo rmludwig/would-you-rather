@@ -9,7 +9,7 @@ import Position from "./Position";
 class UserStats extends Component {
     render() {
         return (
-            <Card style={{ margin: "3rem", maxWidth: "50rem"}} className="mx-auto" border="dark">
+            <Card style={{ margin: "3rem", maxWidth: "50rem"}} className="mx-auto" border="primary">
                 <Card.Body>
                     <Card.Header className="d-flex justify-content-center text-dark mb-2 rounded">
                         <h3 className="font-weight-bold">{this.props.users[this.props.id].name}</h3>
