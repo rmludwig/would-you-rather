@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 import QuestionAnswered from './QuestionAnswered';
 import QuestionVote from './QuestionVote';
@@ -72,6 +73,9 @@ class Question extends Component {
                                                     : <QuestionAnswered answered={this.props.answered} option="optionOne" />
                                                 }
                                             </Row>
+                                            {this.props.answered !== false &&
+                                                <ProgressBar striped variant="primary" max={this.props.userCount} now={this.props.votesOne} label={`${this.props.votesOne} / ${this.props.userCount} voted`} />
+                                            }
                                         </ListGroup.Item>
                                         }
                                         {this.props.preview === false &&
@@ -87,6 +91,9 @@ class Question extends Component {
                                                     : <QuestionAnswered answered={this.props.answered} option="optionTwo" />
                                                 }
                                             </Row>
+                                            {this.props.answered !== false &&
+                                                <ProgressBar striped variant="primary" max={this.props.userCount} now={this.props.votesTwo} label={`${this.props.votesTwo} / ${this.props.userCount} voted`} />
+                                            }
                                         </ListGroup.Item>
                                         }
                                     </ListGroup>
@@ -105,12 +112,19 @@ function mapStateToProps ({ questions, users, userAuth }, props) {
     const preview = props.preview ? true : false;
     const currentQuestion = question_id ? questions[question_id] : questions[props.id];
     const answered = users[userAuth.id].answers.hasOwnProperty(currentQuestion.id) ? users[userAuth.id].answers[currentQuestion.id] : false;
+    const votesOne = currentQuestion.optionOne.votes.length;
+    const votesTwo = currentQuestion.optionTwo.votes.length;
+    const userCount = Object.keys(users).length;
+
 
     return {
         currentQuestion,
         preview,
         answered: answered,
-        user: users[userAuth.id]
+        user: users[userAuth.id],
+        votesOne,
+        votesTwo,
+        userCount
     }
 }
 

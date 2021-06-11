@@ -28,7 +28,7 @@ class QuestionAnswered extends Component {
         return (
             <Col sm={3} className="d-flex justify-content-center my-1">
                 {this.props.answered === this.props.option &&
-                    <h6><span className="rounded bg-success text-dark p-1">Your Choice</span></h6>
+                    <h6><span className="rounded bg-success text-light p-1">Your Choice</span></h6>
                 }
             </Col>
         )
