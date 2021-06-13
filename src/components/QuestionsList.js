@@ -21,11 +21,17 @@ class QuestionsList extends Component {
                             {this.props.unansweredIdsSorted.map((id) => (
                                 <QuestionView key={id} id={id} preview/>
                             ))}
+                            {this.props.unansweredIdsSorted.length === 0 &&
+                                <div className="text-center p-4">User {this.props.name} has no remaining unanswered questions. Add a new one above.</div>
+                            }
                         </Tab>
                         <Tab eventKey="answered" title="Answered" tabClassName="font-weight-bold">
                             {this.props.answeredIdsSorted.map((id) => (
                                 <QuestionView key={id} id={id} preview/>
                             ))}
+                            {this.props.answeredIdsSorted.length === 0 &&
+                                <div className="text-center p-4">User {this.props.name} has no answered questions.</div>
+                            }
                         </Tab>
                     </Tabs>
                 </div>
@@ -34,7 +40,7 @@ class QuestionsList extends Component {
     }
 }
 
-function mapStateToProps ({ questions, userAuth }) {
+function mapStateToProps ({ users, questions, userAuth }) {
     const answeredIdsSorted = Object.keys(questions).filter( (id) =>
         questions[id].optionOne.votes.includes(userAuth.id) || questions[id].optionTwo.votes.includes(userAuth.id)
     )
@@ -43,10 +49,12 @@ function mapStateToProps ({ questions, userAuth }) {
         questions[id].optionOne.votes.includes(userAuth.id) === false && questions[id].optionTwo.votes.includes(userAuth.id) === false
     )
     .sort((a,b) => questions[b].timestamp - questions[a].timestamp);
+    const name = users[userAuth.id].name;
 
     return {
         answeredIdsSorted,
-        unansweredIdsSorted
+        unansweredIdsSorted,
+        name
     }
 }
 

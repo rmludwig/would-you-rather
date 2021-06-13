@@ -26,12 +26,12 @@ class UserStats extends Component {
                                 <Position position={this.props.position} />
                                 <Card.Text as={"div"}>{/*d-flex justify-content-between*/}
                                 <Row>
-                                    <Col sm={12} md={8} className="custom-left-center-text">Answers</Col>
+                                    <Col sm={12} md={8} className="custom-left-center-text">Answered</Col>
                                     <Col sm={12} md={4} className="custom-right-center-text">{this.props.answers}</Col>
                                 </Row>
                                 <Row>
-                                    <Col sm={12} md={8} className="custom-left-center-text">Questions</Col>
-                                    <Col sm={12} md={4} className="custom-right-center-text">4{this.props.questions}</Col>
+                                    <Col sm={12} md={8} className="custom-left-center-text">Questions Asked</Col>
+                                    <Col sm={12} md={4} className="custom-right-center-text">{this.props.questions}</Col>
                                 </Row>
                                 </Card.Text>
                             </Card.Body>

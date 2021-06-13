@@ -74,7 +74,9 @@ class Question extends Component {
                                                 }
                                             </Row>
                                             {this.props.answered !== false &&
-                                                <ProgressBar striped variant="primary" max={this.props.userCount} now={this.props.votesOne} label={`${this.props.votesOne} / ${this.props.userCount} voted`} />
+                                                <ProgressBar striped variant="primary" max={this.props.userCount} now={this.props.votesOne} label={
+                                                    `${this.props.votesOne} / ${this.props.userCount} or ${this.props.percentOne}% voted`
+                                                } />
                                             }
                                         </ListGroup.Item>
                                         }
@@ -92,7 +94,9 @@ class Question extends Component {
                                                 }
                                             </Row>
                                             {this.props.answered !== false &&
-                                                <ProgressBar striped variant="primary" max={this.props.userCount} now={this.props.votesTwo} label={`${this.props.votesTwo} / ${this.props.userCount} voted`} />
+                                                <ProgressBar striped variant="primary" max={this.props.userCount} now={this.props.votesTwo} label={
+                                                    `${this.props.votesTwo} / ${this.props.userCount} or ${this.props.percentTwo}% voted`
+                                                } />
                                             }
                                         </ListGroup.Item>
                                         }
@@ -115,6 +119,8 @@ function mapStateToProps ({ questions, users, userAuth }, props) {
     const votesOne = currentQuestion.optionOne.votes.length;
     const votesTwo = currentQuestion.optionTwo.votes.length;
     const userCount = Object.keys(users).length;
+    const percentOne = Math.floor((votesOne * 100) / userCount );
+    const percentTwo = Math.floor((votesTwo * 100) / userCount );
 
 
     return {
@@ -124,7 +130,9 @@ function mapStateToProps ({ questions, users, userAuth }, props) {
         user: users[userAuth.id],
         votesOne,
         votesTwo,
-        userCount
+        userCount,
+        percentOne,
+        percentTwo
     }
 }
 
