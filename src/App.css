@@ -63,6 +63,10 @@
   width: auto;
   height: auto;
 }
+.avatar-img-sm {
+  max-width:25px;
+  max-height:25px;
+}
 .nav-btn-pad-side {
   margin-left: 1rem !important;
   margin-right: 1rem !important;

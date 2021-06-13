@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
 import { Link, withRouter } from 'react-router-dom';
 import logo from '../logo.svg';
 import { logoutCurrentUser } from '../actions/userAuth';
@@ -29,7 +30,10 @@ class Header extends Component {
                     </Nav>
                     <Nav text="light">
                         {this.props.selectedUser !== null
-                            ? <Navbar.Text><span className="font-weight-bold text-uppercase text-success">{this.props.selectedUser ? this.props.selectedUser.name : ""}</span></Navbar.Text>
+                            ? <Navbar.Text>
+                                <Image variant="top" src={this.props.selectedUser ? this.props.selectedUser.avatarURL : ""} alt="User avatar" className="rounded mx-2 avatar-img-sm"/>
+                                <span className="font-weight-bold text-uppercase text-success">{this.props.selectedUser ? this.props.selectedUser.name : ""}</span>
+                            </Navbar.Text>
                             : ''
                         }
                         {this.props.hideUserLogout === true
