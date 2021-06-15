@@ -41,6 +41,9 @@ class Question extends Component {
                                 <Col sm={8} md={9}>
                                     <ListGroup>
                                         <ListGroup.Item className="text-center font-weight-bold"><h4>Would you rather?</h4></ListGroup.Item>
+                                        {this.props.preview === false && this.props.answered !== false &&
+                                        <ListGroup.Item className="text-center font-weight-bold text-primary pt-3"><h5 style={{fontStyle: "italic"}}>Results</h5></ListGroup.Item>
+                                        }
                                         {this.props.preview &&
                                         <ListGroup.Item>
                                             <Row>
