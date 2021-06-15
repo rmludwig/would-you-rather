@@ -1,12 +1,10 @@
 import { saveQuestionAnswer, saveQuestion } from '../utils/api';
-import { setUserAnswer } from './users';
+import { setUserAnswer, setUserQuestion } from './users';
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const ADD_QUESTION = 'ADD_QUESTION';
 export const VOTE_ONE = 'VOTE_ONE';
 export const VOTE_TWO = 'VOTE_TWO';
-export const REMOVE_VOTE_ONE = 'REMOVE_VOTE_ONE';
-export const REMOVE_VOTE_TWO = 'REMOVE_VOTE_TWO';
 
 export function receiveQuestions (questions) {
     return {
@@ -35,7 +33,8 @@ export function addPollQuestion (info) {
             // it did this is where error handling would remove the update from redux.
             alert('Error adding your question. Please try it again.');
         })
-        .then((question) => dispatch(setNewPollQuestion(question)));
+        .then((question) => dispatch(setNewPollQuestion(question)))
+        .then((question) => dispatch(setUserQuestion(question)));
     }
 }
 
