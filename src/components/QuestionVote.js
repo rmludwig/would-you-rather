@@ -18,7 +18,9 @@ class QuestionVote extends Component {
         else {
             dispatch(answerOptionTwo({ id, userAuth, answer}));
         }
-        this.props.history.push('/')
+        // TODO: This will push to questions list after answering, but for now
+        // just show results of singe question after vote. Change later as needed.
+        //this.props.history.push('/')
     }
 
     render() {
