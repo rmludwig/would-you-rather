@@ -15,8 +15,7 @@ import NotFound from './NotFound';
 
 class Question extends Component {
     render() {
-        const { user } = this.props;
-        if (user === null) {
+        if (this.props.user === null) {
             return (
                 <span>
                     Unknown User
@@ -30,13 +29,13 @@ class Question extends Component {
             return (
                 <Card border="info" className="mx-md-auto mt-5 mx-sm-2" style={{ "maxWidth": "50rem", margin: "2rem"}}>
                     <Card.Body className="pt-0">
-                        <Card.Title className="text-center text-dark mt-2 bg-info mb-0 p-2">{user.name} has asked...</Card.Title>
+                        <Card.Title className="text-center text-dark mt-2 bg-info mb-0 p-2">{this.props.author.name} has asked...</Card.Title>
                         <hr className="mt-0" />
                         <Card.Text as="div">
                             <Row>
                                 <Col sm={4} md={3} className="d-flex justify-content-center">
                                     <div style={{height: "180px", width:" 180px", overflow: "hidden"}}>
-                                        <Image src={user.avatarURL} className="mx-auto d-block"/>
+                                        <Image src={this.props.author.avatarURL} className="mx-auto d-block"/>
                                     </div>
                                 </Col>
                                 <Col sm={8} md={9}>
@@ -119,7 +118,6 @@ function mapStateToProps ({ questions, users, userAuth }, props) {
     const question_id = props.match ? props.match.params.question_id : null;
 
     if (! (question_id in questions) && ! props.id) {
-        console.log("BAD QUESTION!!! ID=", question_id)
         return {questionNotFound: true}
     }
     else {
@@ -138,6 +136,7 @@ function mapStateToProps ({ questions, users, userAuth }, props) {
             preview,
             answered: answered,
             user: users[userAuth.id],
+            author: users[currentQuestion.author],
             votesOne,
             votesTwo,
             userCount,
