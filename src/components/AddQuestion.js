@@ -16,33 +16,33 @@ class AddQuestion extends Component {
     }
 
     formInputHandlerOne = (e) => {
-        const optionOne = e.target.value
+        const optionOne = e.target.value;
         this.setState(() => ({
             optionOne
-        }))
+        }));
     }
 
     formInputHandlerTwo = (e) => {
-        const optionTwo = e.target.value
+        const optionTwo = e.target.value;
         this.setState(() => ({
             optionTwo
-        }))
+        }));
     }
 
     pollSubmit = (e) => {
-        e.preventDefault()
-        const { optionOne, optionTwo } = this.state
-        const { dispatch, user } = this.props
+        e.preventDefault();
+        const { optionOne, optionTwo } = this.state;
+        const { dispatch, user } = this.props;
 
-        dispatch(addPollQuestion({author: user.id, optionOneText: optionOne, optionTwoText: optionTwo }))
+        dispatch(addPollQuestion({author: user.id, optionOneText: optionOne, optionTwoText: optionTwo }));
 
         this.setState(() => ({
             redirect: true,
-        }))
+        }));
     }
 
     render() {
-        const { optionOne, optionTwo, redirect } = this.state
+        const { optionOne, optionTwo, redirect } = this.state;
 
         if (redirect === true) {
             return <Redirect to='/' />

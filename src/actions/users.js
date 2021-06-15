@@ -8,10 +8,7 @@ export function receiveUsers (users) {
     }
 }
 
-
-
 export function setUserAnswer ({id, userAuth, answer}) {
-    console.log("called setUserAnswer", id, userAuth, answer)
     return {
         type: ADD_USER_ANSWER,
         id,

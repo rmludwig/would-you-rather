@@ -8,11 +8,6 @@ export default function users (state = {}, action) {
                 ...action.users
             }
         case ADD_USER_ANSWER :
-            console.log("Deep inside user reducer: action = ", action);
-            console.log("AND ", action.id);
-            console.log("THIS ", state);
-            // const newAnswer = {[action.id]: [action.answer]}
-
             return {
                 ...state,
                 [action.userAuth.id]: {

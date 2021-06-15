@@ -24,7 +24,7 @@ class UserStats extends Component {
                         <Card className="mx-auto">
                             <Card.Body>
                                 <Position position={this.props.position} />
-                                <Card.Text as={"div"}>{/*d-flex justify-content-between*/}
+                                <Card.Text as={"div"}>
                                 <Row>
                                     <Col sm={12} md={8} className="custom-left-center-text">Answered</Col>
                                     <Col sm={12} md={4} className="custom-right-center-text">{this.props.answers}</Col>

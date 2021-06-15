@@ -13,10 +13,6 @@ export default function questions (state = {}, action) {
                 [action.question.id]: action.question
             }
         case VOTE_ONE :
-            console.log("Deep inside question reducer: action = ", action);
-            console.log("AND ", action.id);
-            console.log("THIS ", state[action.id]);
-            console.log("SNOT FUN ", state[action.id].optionOne.text);
             return {
                 ...state,
                 [action.id]: {
@@ -28,10 +24,6 @@ export default function questions (state = {}, action) {
                 }
             }
         case VOTE_TWO :
-            console.log("Deep inside question reducer: action = ", action);
-            console.log("AND ", action.id);
-            console.log("THIS ", state[action.id]);
-            console.log("SNOT FUN ", state[action.id].optionTwo.text);
             return {
                 ...state,
                 [action.id]: {

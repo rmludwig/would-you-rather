@@ -10,9 +10,9 @@ import { logoutCurrentUser } from '../actions/userAuth';
 
 class Header extends Component {
     logoutUser = (e) => {
-        e.preventDefault()
-        const { dispatch} = this.props
-        dispatch(logoutCurrentUser())
+        e.preventDefault();
+        const { dispatch} = this.props;
+        dispatch(logoutCurrentUser());
     }
 
     render() {
@@ -24,8 +24,8 @@ class Header extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
                     <Nav text="light" className="mr-auto">
+                        <Link to={`/`} className="nav-link">Home</Link>
                         <Link to={`/leaderboard`} className="nav-link">Leader Board</Link>
-                        <Link to={`/`} className="nav-link">Questions</Link>
                         <Link to={`/add`} className="nav-link">Add Question</Link>
                     </Nav>
                     <Nav text="light">

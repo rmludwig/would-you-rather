@@ -15,7 +15,6 @@ const store = createStore(reducer, middleware);
 // // added to resolve deprecation warnings in this react version
 // const nodeRef = React.useRef(null);
 
-
 ReactDOM.render(
     // <React.StrictMode>
         <Provider store={store}>

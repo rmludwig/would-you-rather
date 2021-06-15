@@ -5,7 +5,6 @@ export default function userAuth (state = null, action) {
         case SET_CURRENT_USER :
             return action.id
         case LOGOUT_USER :
-            console.log("wth is state?", state)
             return null
         default :
             return state

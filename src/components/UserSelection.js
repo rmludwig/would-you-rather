@@ -26,7 +26,7 @@ class UserSelection extends Component {
 }
 
 function mapStateToProps ({ users }) {
-    // TODO sort order for users?
+    // TODO Change the sort order for users as needed
     return {
         allUserIds: Object.keys(users)
             .sort((a,b) => users[b].id - users[a].id)

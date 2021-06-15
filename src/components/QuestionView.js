@@ -8,7 +8,6 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-
 import QuestionAnswered from './QuestionAnswered';
 import QuestionVote from './QuestionVote';
 import NotFound from './NotFound';
