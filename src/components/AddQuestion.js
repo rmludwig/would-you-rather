@@ -58,7 +58,7 @@ class AddQuestion extends Component {
                 <Card border="success" style={{ maxWidth: "40rem", minWidth: "18rem"}} className="mx-auto my-4">
                     <Card.Body className="pt-0">
                         <Card.Header className="text-center mt-2 secondary">
-                            <h4>Would someone rather:</h4>
+                            <h4>Would You Rather?</h4>
                         </Card.Header>
                         <Card.Text as="div">
                             <Form className="my-2" onSubmit={this.pollSubmit}>

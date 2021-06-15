@@ -11,6 +11,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 
 import QuestionAnswered from './QuestionAnswered';
 import QuestionVote from './QuestionVote';
+import NotFound from './NotFound';
 
 class Question extends Component {
     render() {
@@ -21,6 +22,9 @@ class Question extends Component {
                     Unknown User
                 </span>
             )
+        }
+        else if (this.props.questionNotFound) {
+            return <NotFound />
         }
         else {
             return (
@@ -113,26 +117,33 @@ class Question extends Component {
 
 function mapStateToProps ({ questions, users, userAuth }, props) {
     const question_id = props.match ? props.match.params.question_id : null;
-    const preview = props.preview ? true : false;
-    const currentQuestion = question_id ? questions[question_id] : questions[props.id];
-    const answered = users[userAuth.id].answers.hasOwnProperty(currentQuestion.id) ? users[userAuth.id].answers[currentQuestion.id] : false;
-    const votesOne = currentQuestion.optionOne.votes.length;
-    const votesTwo = currentQuestion.optionTwo.votes.length;
-    const userCount = Object.keys(users).length;
-    const percentOne = Math.floor((votesOne * 100) / userCount );
-    const percentTwo = Math.floor((votesTwo * 100) / userCount );
 
+    if (! (question_id in questions) && ! props.id) {
+        console.log("BAD QUESTION!!! ID=", question_id)
+        return {questionNotFound: true}
+    }
+    else {
+        const preview = props.preview ? true : false;
+        const currentQuestion = question_id ? questions[question_id] : questions[props.id];
+        const answered = users[userAuth.id].answers.hasOwnProperty(currentQuestion.id) ? users[userAuth.id].answers[currentQuestion.id] : false;
+        const votesOne = currentQuestion.optionOne.votes.length;
+        const votesTwo = currentQuestion.optionTwo.votes.length;
+        const userCount = Object.keys(users).length;
+        const percentOne = Math.floor((votesOne * 100) / userCount );
+        const percentTwo = Math.floor((votesTwo * 100) / userCount );
 
-    return {
-        currentQuestion,
-        preview,
-        answered: answered,
-        user: users[userAuth.id],
-        votesOne,
-        votesTwo,
-        userCount,
-        percentOne,
-        percentTwo
+        return {
+            questionNotFound: false,
+            currentQuestion,
+            preview,
+            answered: answered,
+            user: users[userAuth.id],
+            votesOne,
+            votesTwo,
+            userCount,
+            percentOne,
+            percentTwo
+        }
     }
 }
 
